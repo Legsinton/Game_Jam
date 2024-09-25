@@ -10,6 +10,7 @@ public class Vector : MonoBehaviour
     public Rigidbody2D rb;
     public LineRenderer lineRenderer;
     public float lineLengthMultiplier = 0.5f;
+    public int HitsCount;
 
     
     private Vector3 initialMousePos;
@@ -77,6 +78,9 @@ public class Vector : MonoBehaviour
             rb.AddForce(launchDirection * launchForce, ForceMode2D.Impulse);
             isLaunched = true;
             lineRenderer.enabled = false;
+
+            HitsCount++;
+
         }
         if (isLaunched && rb.velocity.magnitude == 0)
         {
