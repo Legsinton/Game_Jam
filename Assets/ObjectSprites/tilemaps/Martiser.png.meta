@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 908414527dd82294fa64c64a5eacb6f6
+guid: 0f781d603fa92cd45874884546a81738
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,11 +93,87 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
       name: Martiser_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 24
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69971fde666c64a4d95f177a29e3d460
+      internalID: -1475098797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Martiser_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 24
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b560b9e9152c1b4a9ff8a9ec090f8d3
+      internalID: -1663498837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Martiser_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 24
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 546a31f5a60f7334ea2bf2da9d019c98
+      internalID: 168188948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Martiser_3
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac8011a4076b47449b2e52b4b2fc1d01
-      internalID: 848653884
+      spriteID: a46a29b18c49c01419b9873785148c46
+      internalID: 578233391
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Martiser_1
+      name: Martiser_4
       rect:
         serializedVersion: 2
         x: 24
@@ -132,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08bd68ded12fc3e489c9cca393a7e347
-      internalID: 1860013268
+      spriteID: 068fc79d8f16302418a26f9b8de71c40
+      internalID: 1746865213
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Martiser_2
+      name: Martiser_5
       rect:
         serializedVersion: 2
         x: 48
@@ -153,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38cd1fb15122f304b97042ffcb1ee388
-      internalID: -1610170655
+      spriteID: ea4482eb98c93604daf2d6775797ecd8
+      internalID: -1577637485
       vertices: []
       indices: 
       edges: []
@@ -170,9 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Martiser_0: 848653884
-      Martiser_1: 1860013268
-      Martiser_2: -1610170655
+      Martiser_0: -1475098797
+      Martiser_1: -1663498837
+      Martiser_2: 168188948
+      Martiser_3: 578233391
+      Martiser_4: 1746865213
+      Martiser_5: -1577637485
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
