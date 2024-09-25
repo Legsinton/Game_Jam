@@ -116,6 +116,18 @@ public class Vector : MonoBehaviour
         rb.angularVelocity = 0f;
     }
 
+    public void EnableDjinn()
+    {
+        if (isLaunched)
+        {
+            Djinn.SetActive(false);
+        }
+        if (!isLaunched)
+        {
+            Djinn.SetActive(true);
+        }
+    }
+
 
 
 
@@ -123,7 +135,7 @@ public class Vector : MonoBehaviour
     void Update()
     {
 
-        Controls(); 
-
+        Controls();
+        EnableDjinn();
     }
 }
