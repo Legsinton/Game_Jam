@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Vector : MonoBehaviour
 {
-
+    //public Vector2 startPosition = new Vector2(0, 0);
     public Vector2 launchDirection;
     public float maxLaunchForce = 10f;
     public Rigidbody2D rb;
@@ -26,6 +26,7 @@ public class Vector : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 1;
+        //rb.position = startPosition;
         lineRenderer.enabled = false;
         lineRenderer.positionCount = 2;
 
@@ -87,6 +88,21 @@ public class Vector : MonoBehaviour
             isLaunched = false;
         }
     }
+
+    /*void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            ResetStartPosition();
+        }
+    }
+
+    public void ResetStartPosition()
+    {
+        rb.position = startPosition;
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+    }*/
 
 
 
