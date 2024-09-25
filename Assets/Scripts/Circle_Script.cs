@@ -1,6 +1,7 @@
 
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class Circle_Script : MonoBehaviour
 {
@@ -8,7 +9,6 @@ public class Circle_Script : MonoBehaviour
     public Vector2 CirclePosition;
     public Vector2 velocity = Vector2.zero;
     public float speed = 2;
-    public float deacceliration = 1.1f;
     public float gravity = 9.98f;
     public float MaxSpeed = 5;
     public float stopSpeed = 15f;
@@ -19,7 +19,7 @@ public class Circle_Script : MonoBehaviour
     int currentJumps;
 
     Rigidbody2D rb2D;
-
+   
     
     void Start()
     {
@@ -31,6 +31,8 @@ public class Circle_Script : MonoBehaviour
 
         //Calculate player size based on our colliders, length of raycast
         feetOffset = GetComponent<Collider2D>().bounds.extents.y;// + 0.02f;
+      
+
 
 
     }
@@ -38,7 +40,7 @@ public class Circle_Script : MonoBehaviour
     void Update()
     {
         
-
+        //When you press down the mouse button and set circleposition
         if (Input.GetMouseButtonDown(0) && currentJumps == MaxJump)
         {
            
@@ -50,7 +52,7 @@ public class Circle_Script : MonoBehaviour
         }
 
        
-
+        // Launch the object and add to current jumps
         if (Input.GetMouseButtonUp(0) && currentJumps == MaxJump)
         {
             currentJumps++;
@@ -61,63 +63,36 @@ public class Circle_Script : MonoBehaviour
      
    
         // Apply velocity to move the object
-        //transform.position += (Vector3)velocity * Time.deltaTime;
         rb2D.velocity = velocity;
+        // Apply gravity to y axis
         velocity.y -= gravity * Time.deltaTime;
-
-        // Gradually slow down the object over time
        
         
-           
-        //velocity.x /= deacceliration * Time.deltaTime;  // Apply deceleration
+        //Dont use   
+        //velocity.x /= deacceliration * Time.deltaTime; 
            
         
-
+        // Set Maxspeed to both axis
         velocity.x = Mathf.Clamp(velocity.x, -MaxSpeed, MaxSpeed);
         velocity.y = Mathf.Clamp(velocity.y, -MaxSpeed, MaxSpeed);
 
-
-
-
-
-
     }
-
-    /*private void GroundCheck()
-    {
-        //Calculate our ray start position
-        var rayPos = rb2D.velocity;
-        rayPos.y -= feetOffset;
-
-        //Fire a raycast
-        RaycastHit2D hit = Physics2D.Raycast(rayPos, Vector2.down, groundCheckDistance);
-
-        //Debug draw our ray so we can see it.
-        Debug.DrawRay(rayPos, Vector2.down * groundCheckDistance);
-
-        // If it hits something...
-        if (hit.collider != null)
-        {
-            currentJumps = 0;
-
-        }
-    }
-    */
+    // Collision Tags for obsticoles
     void OnCollisionEnter2D(Collision2D collision)
     {
-
+        //For the walls
         if (collision.gameObject.CompareTag("Wall"))
         {
 
             velocity.x = -velocity.x * 0.9f;
         }
-
+        // For the game objects
         if (collision.gameObject.CompareTag("Roof"))
         {
 
             velocity.y = -velocity.y * 0.8f;
         }
-
+        // And for the platforms
         if (collision.gameObject.CompareTag("Floor"))
         {
 

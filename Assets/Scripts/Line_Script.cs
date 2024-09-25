@@ -11,7 +11,6 @@ public class Line_Script : MonoBehaviour
     Vector3 EndPos;
    public LineRenderer Lr;
     Vector3 CamOffset = new Vector3(0, 0, 10);
-    //[SerializeField] AnimationCurve ac;
     // Start is called before the first frame update
     void Start()
     {
