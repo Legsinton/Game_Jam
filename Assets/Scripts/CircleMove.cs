@@ -16,9 +16,12 @@ public class Vector : MonoBehaviour
     private Vector3 initialMousePos;
     private Vector3 finalMousePos;
     private bool isLaunched = false;
-    
 
-    
+    public Animator animator;
+    public Transform playerTransform;
+
+
+
     public float diameter = 0.2f;
     
 
@@ -35,6 +38,7 @@ public class Vector : MonoBehaviour
 
     private void Controls()
     {
+        playerTransform = rb.transform;
         if (Input.GetMouseButtonDown(0) && !isLaunched)
         {
             initialMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -44,6 +48,8 @@ public class Vector : MonoBehaviour
 
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(0, rb.position);
+
+           
 
 
 
@@ -66,6 +72,7 @@ public class Vector : MonoBehaviour
             }
             lineRenderer.SetPosition(1, endPosition);
 
+<<<<<<< Updated upstream
             if (launchDirection.x < 0)
             {
                 Djinn.transform.localScale = new Vector3(-1, 1, 1);
@@ -75,6 +82,12 @@ public class Vector : MonoBehaviour
                 Djinn.transform.localScale = new Vector3(1, 1, 1);
             }
             
+=======
+            float distanceAni = Vector3.Distance(playerTransform.position, initialMousePos);
+
+            // Set the MouseDistance parameter in the Animator
+            animator.SetFloat("MouseDistance", distanceAni);
+>>>>>>> Stashed changes
 
         }
         if (Input.GetMouseButtonUp(0) && lineRenderer.enabled == true && !isLaunched)
@@ -91,6 +104,7 @@ public class Vector : MonoBehaviour
             lineRenderer.enabled = false;
 
             Hit_Counter.Instance.AddCount();
+            animator.SetTrigger("Release");
 
         }
         if (isLaunched && rb.velocity.magnitude == 0)
