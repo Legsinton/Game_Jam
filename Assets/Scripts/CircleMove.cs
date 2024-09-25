@@ -79,7 +79,7 @@ public class Vector : MonoBehaviour
             isLaunched = true;
             lineRenderer.enabled = false;
 
-            HitsCount++;
+            Hit_Counter.Instance.AddCount();
 
         }
         if (isLaunched && rb.velocity.magnitude == 0)
