@@ -7,6 +7,7 @@ public class Vector : MonoBehaviour
     public Vector2 startPosition = new Vector2(0, 0);
     public Vector2 launchDirection;
     public float maxLaunchForce = 10f;
+    public float speed = 2;
     public Rigidbody2D rb;
     public LineRenderer lineRenderer;
     public float lineLengthMultiplier = 0.5f;
@@ -99,7 +100,7 @@ public class Vector : MonoBehaviour
             float distance = Vector2.Distance(initialMousePos, finalMousePos);
             float launchForce = Mathf.Clamp(distance, 0, maxLaunchForce);
 
-            rb.AddForce(launchDirection * launchForce, ForceMode2D.Impulse);
+            rb.AddForce(launchDirection * (launchForce * speed), ForceMode2D.Impulse);
             isLaunched = true;
             lineRenderer.enabled = false;
 
