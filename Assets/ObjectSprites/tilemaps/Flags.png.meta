@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 909977fa66955354291dce96f83caf55
+guid: b03e5f71576638b4998f4838e3228835
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,91 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stairs_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab99147c2afe6cc4791a02a5abf6a3e8
-      internalID: 1518945377
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stairs_1
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 48
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3883b5d62b9dd024b8dd9828124f83f0
-      internalID: 128718579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stairs_2
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cbf4a76c01e898145a5efe8db4ca8711
-      internalID: 335311230
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stairs_3
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 48
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36826267ee003bf4c967c34cc389a4a9
-      internalID: -1784721911
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stairs_4
+      name: Flags_0
       rect:
         serializedVersion: 2
         x: 0
@@ -208,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d43a10c3c2296bc4084b267a061d80eb
-      internalID: 2002611821
+      spriteID: c4e0f64fa89d08d488b6a4f2f3a70a52
+      internalID: 79554017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stairs_5
+      name: Flags_1
       rect:
         serializedVersion: 2
         x: 24
@@ -229,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57223d1900acffa44bce3c36c53628b4
-      internalID: 1575437097
+      spriteID: ad4387458c78b3646b0e512b8725f18b
+      internalID: 1521447724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stairs_6
+      name: Flags_2
       rect:
         serializedVersion: 2
         x: 48
@@ -250,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd1f552e62c547947a0f25602e968c5c
-      internalID: 32353350
+      spriteID: 98abe1e4ca6dcc5498a74d5e4f33e46d
+      internalID: 1686050664
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stairs_7
+      name: Flags_3
       rect:
         serializedVersion: 2
         x: 72
@@ -271,14 +187,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 212293b2ee44b5241bacc8a587ad5315
-      internalID: 1724627257
+      spriteID: 004e996d1f5bb784387994805677ca79
+      internalID: -1895111101
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stairs_8
+      name: Flags_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 24
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a26b8cfccca794ea8b773336e5ff3f
+      internalID: -1006455929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flags_5
       rect:
         serializedVersion: 2
         x: 0
@@ -292,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ec11504ef7776d4581d2be715906aa2
-      internalID: -293312906
+      spriteID: 381e7c9d509250042bd24f15dd292d5f
+      internalID: 1409387189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stairs_9
+      name: Flags_6
       rect:
         serializedVersion: 2
         x: 24
@@ -313,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 594fec789389c54439a5754d5ac158cf
-      internalID: 610390010
+      spriteID: 82f0f327ccdd98d40ba412107bf556a7
+      internalID: -928441917
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stairs_10
+      name: Flags_7
       rect:
         serializedVersion: 2
         x: 48
@@ -334,8 +271,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c78e6d54c6666b94681ebb07fb6a6452
-      internalID: -334164399
+      spriteID: dddb88bada705f34687c84261993faa6
+      internalID: 1781518347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flags_8
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f7e27712915bb14a96df6c7d17f6cda
+      internalID: 504474830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flags_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b442daa4584df0d4092895aa8c3a9b2e
+      internalID: 1712186210
       vertices: []
       indices: 
       edges: []
@@ -351,17 +330,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      stairs_0: 1518945377
-      stairs_1: 128718579
-      stairs_10: -334164399
-      stairs_2: 335311230
-      stairs_3: -1784721911
-      stairs_4: 2002611821
-      stairs_5: 1575437097
-      stairs_6: 32353350
-      stairs_7: 1724627257
-      stairs_8: -293312906
-      stairs_9: 610390010
+      Flags_0: 79554017
+      Flags_1: 1521447724
+      Flags_2: 1686050664
+      Flags_3: -1895111101
+      Flags_4: -1006455929
+      Flags_5: 1409387189
+      Flags_6: -928441917
+      Flags_7: 1781518347
+      Flags_8: 504474830
+      Flags_9: 1712186210
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

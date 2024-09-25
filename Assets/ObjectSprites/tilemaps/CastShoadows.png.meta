@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 909977fa66955354291dce96f83caf55
+guid: 690d3708756a0a34e93d10161090a8ee
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,91 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stairs_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab99147c2afe6cc4791a02a5abf6a3e8
-      internalID: 1518945377
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stairs_1
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 48
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3883b5d62b9dd024b8dd9828124f83f0
-      internalID: 128718579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stairs_2
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cbf4a76c01e898145a5efe8db4ca8711
-      internalID: 335311230
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stairs_3
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 48
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36826267ee003bf4c967c34cc389a4a9
-      internalID: -1784721911
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stairs_4
+      name: CastShoadows_0
       rect:
         serializedVersion: 2
         x: 0
@@ -208,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d43a10c3c2296bc4084b267a061d80eb
-      internalID: 2002611821
+      spriteID: 2bf346be9dc48244e95ce538bf5475b6
+      internalID: 1401501934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stairs_5
+      name: CastShoadows_1
       rect:
         serializedVersion: 2
         x: 24
@@ -229,56 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57223d1900acffa44bce3c36c53628b4
-      internalID: 1575437097
+      spriteID: 7bee8bc2179a0194294e7878b410814a
+      internalID: 370894379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stairs_6
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 24
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd1f552e62c547947a0f25602e968c5c
-      internalID: 32353350
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stairs_7
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 24
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 212293b2ee44b5241bacc8a587ad5315
-      internalID: 1724627257
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stairs_8
+      name: CastShoadows_2
       rect:
         serializedVersion: 2
         x: 0
@@ -292,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ec11504ef7776d4581d2be715906aa2
-      internalID: -293312906
+      spriteID: 8ccfb68b22e73824ab0fb2f54a2171a7
+      internalID: -1654941828
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stairs_9
+      name: CastShoadows_3
       rect:
         serializedVersion: 2
         x: 24
@@ -313,29 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 594fec789389c54439a5754d5ac158cf
-      internalID: 610390010
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stairs_10
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c78e6d54c6666b94681ebb07fb6a6452
-      internalID: -334164399
+      spriteID: c1322fc8e6e1f944ebb1de1a24259802
+      internalID: 1494106134
       vertices: []
       indices: 
       edges: []
@@ -351,17 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      stairs_0: 1518945377
-      stairs_1: 128718579
-      stairs_10: -334164399
-      stairs_2: 335311230
-      stairs_3: -1784721911
-      stairs_4: 2002611821
-      stairs_5: 1575437097
-      stairs_6: 32353350
-      stairs_7: 1724627257
-      stairs_8: -293312906
-      stairs_9: 610390010
+      CastShoadows_0: 1401501934
+      CastShoadows_1: 370894379
+      CastShoadows_2: -1654941828
+      CastShoadows_3: 1494106134
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
