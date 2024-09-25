@@ -72,7 +72,7 @@ public class Vector : MonoBehaviour
             }
             lineRenderer.SetPosition(1, endPosition);
 
-<<<<<<< Updated upstream
+
             if (launchDirection.x < 0)
             {
                 Djinn.transform.localScale = new Vector3(-1, 1, 1);
@@ -82,12 +82,12 @@ public class Vector : MonoBehaviour
                 Djinn.transform.localScale = new Vector3(1, 1, 1);
             }
             
-=======
+
             float distanceAni = Vector3.Distance(playerTransform.position, initialMousePos);
 
             // Set the MouseDistance parameter in the Animator
             animator.SetFloat("MouseDistance", distanceAni);
->>>>>>> Stashed changes
+
 
         }
         if (Input.GetMouseButtonUp(0) && lineRenderer.enabled == true && !isLaunched)
