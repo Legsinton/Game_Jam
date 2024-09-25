@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Vector : MonoBehaviour
 {
-    //public Vector2 startPosition = new Vector2(0, 0);
+    public Vector2 startPosition = new Vector2(0, 0);
     public Vector2 launchDirection;
     public float maxLaunchForce = 10f;
     public Rigidbody2D rb;
     public LineRenderer lineRenderer;
     public float lineLengthMultiplier = 0.5f;
     public int HitsCount;
-
+    public GameObject Djinn;
     
     private Vector3 initialMousePos;
     private Vector3 finalMousePos;
@@ -26,7 +26,7 @@ public class Vector : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 1;
-        //rb.position = startPosition;
+        rb.position = startPosition;
         lineRenderer.enabled = false;
         lineRenderer.positionCount = 2;
 
@@ -66,6 +66,16 @@ public class Vector : MonoBehaviour
             }
             lineRenderer.SetPosition(1, endPosition);
 
+            if (launchDirection.x < 0)
+            {
+                Djinn.transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else
+            {
+                Djinn.transform.localScale = new Vector3(1, 1, 1);
+            }
+            
+
         }
         if (Input.GetMouseButtonUp(0) && lineRenderer.enabled == true && !isLaunched)
         {
@@ -95,14 +105,16 @@ public class Vector : MonoBehaviour
         {
             ResetStartPosition();
         }
-    }
+    }*/
+
+
 
     public void ResetStartPosition()
     {
         rb.position = startPosition;
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
-    }*/
+    }
 
 
 
