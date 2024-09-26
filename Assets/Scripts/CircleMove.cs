@@ -7,12 +7,18 @@ public class Vector : MonoBehaviour
     public Vector2 startPosition = new Vector2(0, 0);
     public Vector2 launchDirection;
     public float maxLaunchForce = 10f;
+    public float Speed = 2;
     public Rigidbody2D rb;
     public LineRenderer lineRenderer;
     public float lineLengthMultiplier = 0.5f;
     public int HitsCount;
     public GameObject Djinn;
-    
+    public Vector2 endPosition;
+    public float distance;
+    public float LaunchForce;
+    public float SlowDown = 0.8f;
+
+
     private Vector3 initialMousePos;
     private Vector3 finalMousePos;
     private bool isLaunched = false;
@@ -64,7 +70,7 @@ public class Vector : MonoBehaviour
             float launchForce = Mathf.Clamp(distance, 0, maxLaunchForce);
             float maxLineLength = maxLaunchForce;
 
-            Vector2 endPosition = rb.position + (launchForce * lineLengthMultiplier * launchDirection);
+            endPosition = rb.position + (LaunchForce * lineLengthMultiplier * launchDirection);
 
             if (Vector2.Distance(rb.position, endPosition) > maxLineLength)
             {
@@ -72,7 +78,7 @@ public class Vector : MonoBehaviour
             }
             lineRenderer.SetPosition(1, endPosition);
 
-<<<<<<< Updated upstream
+
             if (launchDirection.x < 0)
             {
                 Djinn.transform.localScale = new Vector3(-1, 1, 1);
@@ -81,13 +87,9 @@ public class Vector : MonoBehaviour
             {
                 Djinn.transform.localScale = new Vector3(1, 1, 1);
             }
-            
-=======
-            float distanceAni = Vector3.Distance(playerTransform.position, initialMousePos);
 
-            // Set the MouseDistance parameter in the Animator
-            animator.SetFloat("MouseDistance", distanceAni);
->>>>>>> Stashed changes
+          
+
 
         }
         if (Input.GetMouseButtonUp(0) && lineRenderer.enabled == true && !isLaunched)
@@ -96,15 +98,15 @@ public class Vector : MonoBehaviour
             finalMousePos.z = 0f;
             launchDirection = (initialMousePos - finalMousePos).normalized;
 
-            float distance = Vector2.Distance(initialMousePos, finalMousePos);
-            float launchForce = Mathf.Clamp(distance, 0, maxLaunchForce);
+            distance = Vector2.Distance(initialMousePos, finalMousePos);
+            LaunchForce = Mathf.Clamp(distance, 0, maxLaunchForce);
 
-            rb.AddForce(launchDirection * launchForce, ForceMode2D.Impulse);
+            rb.AddForce(launchDirection * (LaunchForce * Speed), ForceMode2D.Impulse);
             isLaunched = true;
             lineRenderer.enabled = false;
 
             Hit_Counter.Instance.AddCount();
-            animator.SetTrigger("Release");
+            animator.SetBool("IsReleased", true);
 
         }
         if (isLaunched && rb.velocity.magnitude == 0)
@@ -152,4 +154,26 @@ public class Vector : MonoBehaviour
         Controls();
         EnableDjinn();
     }
+
+    void OnMouseDrag()
+    {
+
+        float distanceAni = Vector3.Distance(playerTransform.position, initialMousePos);
+
+        // Set the MouseDistance parameter in the Animator
+        animator.SetFloat("Movement", distanceAni);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+
+            rb.AddForce((-launchDirection * SlowDown) * (-LaunchForce * SlowDown), ForceMode2D.Impulse);
+        }
+
+    }
+
+
 }
