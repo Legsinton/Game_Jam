@@ -90,10 +90,10 @@ public class Vector : MonoBehaviour
                 Djinn.transform.localScale = new Vector3(1, 1, 1);
             }
 
-            float distanceAni = Vector3.Distance(playerTransform.position, initialMousePos);
+            //float distanceAni = Vector3.Distance(playerTransform.position, initialMousePos);
 
             // Set the MouseDistance parameter in the Animator
-            animator.SetFloat("MouseDistance", distanceAni);
+            //animator.SetFloat("MouseDistance", distanceAni);
 
 
 
@@ -113,7 +113,7 @@ public class Vector : MonoBehaviour
             lineRenderer.enabled = false;
 
             Hit_Counter.Instance.AddCount();
-            animator.SetBool("IsReleased", true);
+            //animator.SetBool("IsReleased", true);
 
         }
         if (isLaunched && rb.velocity.magnitude == 0)
