@@ -31,16 +31,18 @@ public class Vector : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Sprite[] spinSprites;
     public Sprite originalSprite;
+    public GameObject Awakeprite;
+    public GameObject mySprite;
 
 
 
 
     public float diameter = 0.2f;
-    
+
 
     private void Start()
     {
-      
+
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb.gravityScale = 1;
@@ -55,7 +57,7 @@ public class Vector : MonoBehaviour
 
     private void Controls()
     {
-      
+
         if (Input.GetMouseButtonDown(0) && !isLaunched)
         {
             initialMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -66,7 +68,7 @@ public class Vector : MonoBehaviour
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(0, rb.position);
 
-           
+
 
 
 
@@ -100,16 +102,16 @@ public class Vector : MonoBehaviour
             }
 
             // Get the distance between the object and the mouse position
-        
+
 
             // Map the distance to an index within the spriteArray
             // For example, you could divide distance by a factor to control sprite switching sensitivity
-           
 
-            
+
+
 
             // Set the MouseDistance parameter in the Animator
-           // animator.SetFloat("Movement", distanceAni);
+            // animator.SetFloat("Movement", distanceAni);
 
 
 
@@ -163,10 +165,10 @@ public class Vector : MonoBehaviour
         {
             Djinn.SetActive(false);
         }
-        if (!isLaunched)
-        {
-            Djinn.SetActive(true);
-        }
+        //if (!isLaunched)
+        //{
+        //    Djinn.SetActive(true);
+        //}
     }
 
 
@@ -178,7 +180,7 @@ public class Vector : MonoBehaviour
 
         Controls();
         EnableDjinn();
-      
+
     }
 
     void OnMouseDrag()
@@ -187,7 +189,7 @@ public class Vector : MonoBehaviour
         //float distanceAni = Vector3.Distance(playerTransform.position, initialMousePos);
 
         // Set the MouseDistance parameter in the Animator
-       // animator.SetFloat("Movement", distanceAni);
+        // animator.SetFloat("Movement", distanceAni);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -199,18 +201,18 @@ public class Vector : MonoBehaviour
             rb.AddForce((-launchDirection * SlowDown) * (-launchForce * SlowDown), ForceMode2D.Impulse);
         }
 
-       
-            if (collision.gameObject.CompareTag("Floor"))
-            {
-               // Reset to the starting position
-                spriteRenderer.sprite = originalSprite;
-                isLaunched = false;
 
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            // Reset to the starting position
+            spriteRenderer.sprite = originalSprite;
+            isLaunched = false;
+            StartCoroutine(Land());
             Debug.Log("ygyvgvgy");
-                
-                // Reset current frame if needed
-            }
-        
+
+            // Reset current frame if needed
+        }
+
 
     }
 
@@ -221,7 +223,7 @@ public class Vector : MonoBehaviour
             // Loop through the sprites to simulate spinning
             for (int i = 0; i < spinSprites.Length; i++)
             {
-                if(isLaunched == true)
+                if (isLaunched == true)
                 {
                     Debug.Log("spinsON");
                     spriteRenderer.sprite = spinSprites[i]; // Set the current sprite
@@ -231,5 +233,12 @@ public class Vector : MonoBehaviour
         }
     }
 
-
+    private IEnumerator Land()
+    {
+        Awakeprite.SetActive(true);
+        mySprite.SetActive(false);
+        yield return new WaitForSeconds(1);
+        Awakeprite.SetActive(false);
+        mySprite.SetActive(true);
+    }
 }
