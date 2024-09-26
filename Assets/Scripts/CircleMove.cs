@@ -26,7 +26,9 @@ public class Vector : MonoBehaviour
     private bool isLaunched = false;
 
     //public Animator animator;
-    public Transform playerTransform;
+    public SpriteRenderer spriteRenderer;
+    public Sprite[] spinSprites;
+    
 
 
 
@@ -37,6 +39,7 @@ public class Vector : MonoBehaviour
     {
       
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         rb.gravityScale = 1;
         rb.position = startPosition;
         lineRenderer.enabled = false;
@@ -121,13 +124,15 @@ public class Vector : MonoBehaviour
             lineRenderer.enabled = false;
 
             Hit_Counter.Instance.AddCount();
-            //animator.SetTrigger("Released");
+            StartCoroutine(SpinBottle());
 
         }
         if (isLaunched && rb.velocity.magnitude == 0)
         {
             isLaunched = false;
         }
+
+
     }
 
     /*void OnCollisionEnter2D(Collision2D collision)
@@ -174,7 +179,7 @@ public class Vector : MonoBehaviour
     void OnMouseDrag()
     {
 
-        float distanceAni = Vector3.Distance(playerTransform.position, initialMousePos);
+        //float distanceAni = Vector3.Distance(playerTransform.position, initialMousePos);
 
         // Set the MouseDistance parameter in the Animator
        // animator.SetFloat("Movement", distanceAni);
@@ -189,6 +194,19 @@ public class Vector : MonoBehaviour
             rb.AddForce((-launchDirection * SlowDown) * (-launchForce * SlowDown), ForceMode2D.Impulse);
         }
 
+    }
+
+    private IEnumerator SpinBottle()
+    {
+        while (isLaunched && Mathf.Abs(rb.velocity.y) > 0.1f)
+        {
+            // Loop through the sprites to simulate spinning
+            for (int i = 0; i < spinSprites.Length; i++)
+            {
+                spriteRenderer.sprite = spinSprites[i]; // Set the current sprite
+                yield return new WaitForSeconds(0.1f); // Wait a bit before switching to the next sprite
+            }
+        }
     }
 
 
