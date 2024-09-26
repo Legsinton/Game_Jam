@@ -7,7 +7,9 @@ public class Vector : MonoBehaviour
     public Vector2 startPosition = new Vector2(0, 0);
     public Vector2 launchDirection;
     public float maxLaunchForce = 10f;
-    public float Speed = 2;
+
+    public float speed = 2;
+
     public Rigidbody2D rb;
     public LineRenderer lineRenderer;
     public float lineLengthMultiplier = 0.5f;
@@ -88,7 +90,11 @@ public class Vector : MonoBehaviour
                 Djinn.transform.localScale = new Vector3(1, 1, 1);
             }
 
-          
+            float distanceAni = Vector3.Distance(playerTransform.position, initialMousePos);
+
+            // Set the MouseDistance parameter in the Animator
+            animator.SetFloat("MouseDistance", distanceAni);
+
 
 
         }
@@ -101,7 +107,8 @@ public class Vector : MonoBehaviour
             distance = Vector2.Distance(initialMousePos, finalMousePos);
             LaunchForce = Mathf.Clamp(distance, 0, maxLaunchForce);
 
-            rb.AddForce(launchDirection * (LaunchForce * Speed), ForceMode2D.Impulse);
+            rb.AddForce(launchDirection * (launchForce * speed), ForceMode2D.Impulse);
+
             isLaunched = true;
             lineRenderer.enabled = false;
 
