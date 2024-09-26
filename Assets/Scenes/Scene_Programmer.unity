@@ -634,7 +634,6 @@ GameObject:
   - component: {fileID: 590987545}
   - component: {fileID: 590987546}
   - component: {fileID: 590987548}
-  - component: {fileID: 590987547}
   m_Layer: 0
   m_Name: GeneBottle
   m_TagString: Player
@@ -683,7 +682,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -778529243, guid: 56729fd66c1b5f5499e7f73f917f2686, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3b94491838cc62443955d804f78db334, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -746,7 +745,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 3}
+    oldSize: {x: 0.5416667, y: 1.125}
     newSize: {x: 0.5416667, y: 1.125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -797,6 +796,7 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0}
   launchDirection: {x: 0, y: 0}
   maxLaunchForce: 8
+  victoryPanel: {fileID: 0}
   speed: 2
   rb: {fileID: 0}
   lineRenderer: {fileID: 590987546}
@@ -807,8 +807,16 @@ MonoBehaviour:
   distance: 0
   launchForce: 0
   SlowDown: 0.93
-  Spin: {fileID: 0}
-  playerTransform: {fileID: 1071239539}
+  spriteRenderer: {fileID: 0}
+  spinSprites:
+  - {fileID: 21300000, guid: 915954fadeb7ab449bad0ee4e1875e1a, type: 3}
+  - {fileID: 21300000, guid: a4b6144d157b9f24e9e30de7b678b8a6, type: 3}
+  - {fileID: 21300000, guid: db37638abd8047747bb356da0e6d543a, type: 3}
+  - {fileID: 21300000, guid: b7b1d61561136c44b95a8fb74f529373, type: 3}
+  - {fileID: 21300000, guid: 9dd03f866ff41d94fb4341f6049cf0ca, type: 3}
+  - {fileID: 21300000, guid: 9a4a6ee1f9e677e46bc2c21f9320a338, type: 3}
+  - {fileID: 21300000, guid: 510e9949abaa7ef45b4a1d20dee7c932, type: 3}
+  - {fileID: 21300000, guid: 27c8ee5971cd707458df5aca7bdb4b33, type: 3}
   diameter: 0.2
 --- !u!120 &590987546
 LineRenderer:
@@ -914,27 +922,6 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!95 &590987547
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 590987539}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 15c9c3ef12b5c1a459f0b1dfce0e1a2c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &590987548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -942,19 +929,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590987539}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f9abb68ae2a22941b5b8e8af940ebd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteArray:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  spriteArray: []
   spriteRenderer: {fileID: 0}
-  spinSprites: []
+  spinSprites:
+  - {fileID: -778529243, guid: 56729fd66c1b5f5499e7f73f917f2686, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   spinSpeed: 0.1
 --- !u!1 &608698739
 GameObject:
@@ -1542,12 +1529,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteArray:
-  - {fileID: -1703834638, guid: 9d5d58659b61a4945b70061e41757017, type: 3}
-  - {fileID: 94191908, guid: 9d5d58659b61a4945b70061e41757017, type: 3}
-  - {fileID: -678396015, guid: 9d5d58659b61a4945b70061e41757017, type: 3}
-  - {fileID: -129271065, guid: 9d5d58659b61a4945b70061e41757017, type: 3}
+  - {fileID: 21300000, guid: 653dcd6cc929cf84290df49fce8c372f, type: 3}
+  - {fileID: 21300000, guid: a9d98a88d93578b4c8a21dfb977b0f1b, type: 3}
+  - {fileID: 21300000, guid: ce46b9122d6c5b345a64b23411f8fb27, type: 3}
+  - {fileID: 21300000, guid: bafa6fa7330f2874d9ca27b48046afd0, type: 3}
   spriteRenderer: {fileID: 0}
-  spinSprites: []
+  spinSprites:
+  - {fileID: 21300000, guid: 915954fadeb7ab449bad0ee4e1875e1a, type: 3}
+  - {fileID: 21300000, guid: a4b6144d157b9f24e9e30de7b678b8a6, type: 3}
+  - {fileID: 21300000, guid: db37638abd8047747bb356da0e6d543a, type: 3}
+  - {fileID: 21300000, guid: b7b1d61561136c44b95a8fb74f529373, type: 3}
+  - {fileID: 21300000, guid: 9dd03f866ff41d94fb4341f6049cf0ca, type: 3}
+  - {fileID: 21300000, guid: 9a4a6ee1f9e677e46bc2c21f9320a338, type: 3}
+  - {fileID: 21300000, guid: 510e9949abaa7ef45b4a1d20dee7c932, type: 3}
+  - {fileID: 21300000, guid: 27c8ee5971cd707458df5aca7bdb4b33, type: 3}
   spinSpeed: 0.1
 --- !u!1 &1154680906
 GameObject:
