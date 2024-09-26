@@ -13,6 +13,8 @@ public class Vector : MonoBehaviour
     public float lineLengthMultiplier = 0.5f;
     public int HitsCount;
     public GameObject Djinn;
+    public GameObject victoryPanel;
+    public GoalTriggerScript goalTriggerScript;
     
     private Vector3 initialMousePos;
     private Vector3 finalMousePos;
@@ -33,8 +35,10 @@ public class Vector : MonoBehaviour
         rb.position = startPosition;
         lineRenderer.enabled = false;
         lineRenderer.positionCount = 2;
-
+        victoryPanel.SetActive(false);
         
+
+
     }
 
     private void Controls()
@@ -149,8 +153,11 @@ public class Vector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Controls();
+        if (GoalTriggerScript.hasReachedGoal == false)
+        {
+            Controls();
+        }
+        
         EnableDjinn();
     }
 }
