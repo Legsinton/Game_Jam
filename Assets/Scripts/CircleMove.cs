@@ -25,7 +25,7 @@ public class Vector : MonoBehaviour
     private Vector3 finalMousePos;
     private bool isLaunched = false;
 
-    public Animator animator;
+    //public Animator animator;
     public Transform playerTransform;
 
 
@@ -35,6 +35,7 @@ public class Vector : MonoBehaviour
 
     private void Start()
     {
+      
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 1;
         rb.position = startPosition;
@@ -46,7 +47,7 @@ public class Vector : MonoBehaviour
 
     private void Controls()
     {
-        playerTransform = rb.transform;
+      
         if (Input.GetMouseButtonDown(0) && !isLaunched)
         {
             initialMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -90,10 +91,17 @@ public class Vector : MonoBehaviour
                 Djinn.transform.localScale = new Vector3(1, 1, 1);
             }
 
-            //float distanceAni = Vector3.Distance(playerTransform.position, initialMousePos);
+            // Get the distance between the object and the mouse position
+        
+
+            // Map the distance to an index within the spriteArray
+            // For example, you could divide distance by a factor to control sprite switching sensitivity
+           
+
+            
 
             // Set the MouseDistance parameter in the Animator
-            //animator.SetFloat("MouseDistance", distanceAni);
+           // animator.SetFloat("Movement", distanceAni);
 
 
 
@@ -113,7 +121,7 @@ public class Vector : MonoBehaviour
             lineRenderer.enabled = false;
 
             Hit_Counter.Instance.AddCount();
-            //animator.SetBool("IsReleased", true);
+            //animator.SetTrigger("Released");
 
         }
         if (isLaunched && rb.velocity.magnitude == 0)
@@ -160,6 +168,7 @@ public class Vector : MonoBehaviour
 
         Controls();
         EnableDjinn();
+      
     }
 
     void OnMouseDrag()
@@ -168,7 +177,7 @@ public class Vector : MonoBehaviour
         float distanceAni = Vector3.Distance(playerTransform.position, initialMousePos);
 
         // Set the MouseDistance parameter in the Animator
-        animator.SetFloat("Movement", distanceAni);
+       // animator.SetFloat("Movement", distanceAni);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
