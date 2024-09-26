@@ -107,7 +107,7 @@ public class Vector : MonoBehaviour
             distance = Vector2.Distance(initialMousePos, finalMousePos);
             LaunchForce = Mathf.Clamp(distance, 0, maxLaunchForce);
 
-            rb.AddForce(launchDirection * (launchForce * speed), ForceMode2D.Impulse);
+            rb.AddForce(launchDirection * (LaunchForce * speed), ForceMode2D.Impulse);
 
             isLaunched = true;
             lineRenderer.enabled = false;
