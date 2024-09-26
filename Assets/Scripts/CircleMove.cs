@@ -30,7 +30,8 @@ public class Vector : MonoBehaviour
     //public Animator animator;
     public SpriteRenderer spriteRenderer;
     public Sprite[] spinSprites;
-    
+    public Sprite originalSprite;
+
 
 
 
@@ -47,6 +48,7 @@ public class Vector : MonoBehaviour
         lineRenderer.enabled = false;
         lineRenderer.positionCount = 2;
         victoryPanel.SetActive(false);
+        originalSprite = spriteRenderer.sprite;
 
 
     }
@@ -197,6 +199,19 @@ public class Vector : MonoBehaviour
             rb.AddForce((-launchDirection * SlowDown) * (-launchForce * SlowDown), ForceMode2D.Impulse);
         }
 
+       
+            if (collision.gameObject.CompareTag("Floor"))
+            {
+               // Reset to the starting position
+                spriteRenderer.sprite = originalSprite;
+                isLaunched = false;
+
+            Debug.Log("ygyvgvgy");
+                
+                // Reset current frame if needed
+            }
+        
+
     }
 
     private IEnumerator SpinBottle()
@@ -206,8 +221,12 @@ public class Vector : MonoBehaviour
             // Loop through the sprites to simulate spinning
             for (int i = 0; i < spinSprites.Length; i++)
             {
-                spriteRenderer.sprite = spinSprites[i]; // Set the current sprite
-                yield return new WaitForSeconds(0.1f); // Wait a bit before switching to the next sprite
+                if(isLaunched == true)
+                {
+                    Debug.Log("spinsON");
+                    spriteRenderer.sprite = spinSprites[i]; // Set the current sprite
+                    yield return new WaitForSeconds(0.1f); // Wait a bit before switching to the next sprite
+                }
             }
         }
     }
