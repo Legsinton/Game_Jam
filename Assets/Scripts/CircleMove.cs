@@ -15,16 +15,10 @@ public class Vector : MonoBehaviour
     public float lineLengthMultiplier = 0.5f;
     public int HitsCount;
     public GameObject Djinn;
-
-    public GameObject victoryPanel;
-    public GoalTriggerScript goalTriggerScript;
-    
-
     public Vector2 endPosition;
     public float distance;
     public float launchForce;
     public float SlowDown = 0.8f;
-
 
 
     private Vector3 initialMousePos;
@@ -46,10 +40,8 @@ public class Vector : MonoBehaviour
         rb.position = startPosition;
         lineRenderer.enabled = false;
         lineRenderer.positionCount = 2;
-        victoryPanel.SetActive(false);
+
         
-
-
     }
 
     private void Controls()
@@ -98,10 +90,10 @@ public class Vector : MonoBehaviour
                 Djinn.transform.localScale = new Vector3(1, 1, 1);
             }
 
-            float distanceAni = Vector3.Distance(playerTransform.position, initialMousePos);
+            //float distanceAni = Vector3.Distance(playerTransform.position, initialMousePos);
 
             // Set the MouseDistance parameter in the Animator
-            animator.SetFloat("MouseDistance", distanceAni);
+            //animator.SetFloat("MouseDistance", distanceAni);
 
 
 
@@ -120,8 +112,8 @@ public class Vector : MonoBehaviour
             isLaunched = true;
             lineRenderer.enabled = false;
 
-            //Hit_Counter.Instance.AddCount();
-            animator.SetBool("IsReleased", true);
+            Hit_Counter.Instance.AddCount();
+            //animator.SetBool("IsReleased", true);
 
         }
         if (isLaunched && rb.velocity.magnitude == 0)
@@ -165,11 +157,8 @@ public class Vector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GoalTriggerScript.hasReachedGoal == false)
-        {
-            Controls();
-        }
-        
+
+        Controls();
         EnableDjinn();
     }
 
