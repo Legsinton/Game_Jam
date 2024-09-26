@@ -22,7 +22,7 @@ public class Vector : MonoBehaviour
 
     public Vector2 endPosition;
     public float distance;
-    public float LaunchForce;
+    public float launchForce;
     public float SlowDown = 0.8f;
 
 
@@ -80,7 +80,7 @@ public class Vector : MonoBehaviour
             float launchForce = Mathf.Clamp(distance, 0, maxLaunchForce);
             float maxLineLength = maxLaunchForce;
 
-            endPosition = rb.position + (LaunchForce * lineLengthMultiplier * launchDirection);
+            endPosition = rb.position + launchDirection * Mathf.Min(launchForce, maxLineLength);
 
             if (Vector2.Distance(rb.position, endPosition) > maxLineLength)
             {
@@ -113,9 +113,9 @@ public class Vector : MonoBehaviour
             launchDirection = (initialMousePos - finalMousePos).normalized;
 
             distance = Vector2.Distance(initialMousePos, finalMousePos);
-            LaunchForce = Mathf.Clamp(distance, 0, maxLaunchForce);
+            launchForce = Mathf.Clamp(distance, 0, maxLaunchForce);
 
-            rb.AddForce(launchDirection * (LaunchForce * speed), ForceMode2D.Impulse);
+            rb.AddForce(launchDirection * (launchForce * speed), ForceMode2D.Impulse);
 
             isLaunched = true;
             lineRenderer.enabled = false;
@@ -188,7 +188,7 @@ public class Vector : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
 
-            rb.AddForce((-launchDirection * SlowDown) * (-LaunchForce * SlowDown), ForceMode2D.Impulse);
+            rb.AddForce((-launchDirection * SlowDown) * (-launchForce * SlowDown), ForceMode2D.Impulse);
         }
 
     }
