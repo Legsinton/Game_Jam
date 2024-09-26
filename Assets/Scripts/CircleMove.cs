@@ -13,6 +13,8 @@ public class Vector : MonoBehaviour
     public float lineLengthMultiplier = 0.5f;
     public int HitsCount;
     public GameObject Djinn;
+    public float LaunchForce;
+    public float SlowDown = 0.8f;
     
     private Vector3 initialMousePos;
     private Vector3 finalMousePos;
@@ -62,10 +64,10 @@ public class Vector : MonoBehaviour
 
             launchDirection = (initialMousePos - finalMousePos).normalized;
             float distance = Vector2.Distance(initialMousePos, finalMousePos);
-            float launchForce = Mathf.Clamp(distance, 0, maxLaunchForce);
+            LaunchForce = Mathf.Clamp(distance, 0, maxLaunchForce);
             float maxLineLength = maxLaunchForce;
 
-            Vector2 endPosition = rb.position + (launchForce * lineLengthMultiplier * launchDirection);
+            Vector2 endPosition = rb.position + (LaunchForce * lineLengthMultiplier * launchDirection);
 
             if (Vector2.Distance(rb.position, endPosition) > maxLineLength)
             {
@@ -100,7 +102,7 @@ public class Vector : MonoBehaviour
             float distance = Vector2.Distance(initialMousePos, finalMousePos);
             float launchForce = Mathf.Clamp(distance, 0, maxLaunchForce);
 
-            rb.AddForce(launchDirection * (launchForce * speed), ForceMode2D.Impulse);
+            rb.AddForce(launchDirection * (LaunchForce * speed), ForceMode2D.Impulse);
             isLaunched = true;
             lineRenderer.enabled = false;
 
@@ -153,4 +155,18 @@ public class Vector : MonoBehaviour
         Controls();
         EnableDjinn();
     }
+void OnCollisionEnter2D(Collision2D collision)
+ {
+
+     if (collision.gameObject.CompareTag("Wall"))
+     {
+
+         rb.AddForce((-launchDirection * SlowDown) * (-LaunchForce * SlowDown), ForceMode2D.Impulse);
+     }
+
+ }
+   
+
+
+
 }
