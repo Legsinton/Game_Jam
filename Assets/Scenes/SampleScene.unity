@@ -887,7 +887,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 459521496}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 7e190b70699d5584fab1d0be3d9ab3eb, type: 2}
+  m_Material: {fileID: 6200000, guid: 4e58f552de40ce841b62b6911f842232, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed51e4b8002cad34bb598ff5cdb6dc9a, type: 3}
+  m_Script: {fileID: 11500000, guid: 644b9c36814301a4b961e368aa46f318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 590987541}
@@ -1424,6 +1424,8 @@ MonoBehaviour:
   lineLengthMultiplier: 0.5
   HitsCount: 0
   Djinn: {fileID: 1071239536}
+  endPosition: {x: 0, y: 0}
+  distance: 0
   LaunchForce: 0
   SlowDown: 0.8
   animator: {fileID: 0}
@@ -1558,7 +1560,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 787467179}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 2dbd6362fc6166c4384e849e3e34c6e6, type: 2}
+  m_Material: {fileID: 6200000, guid: 325773fa92b87f74787325d479eb2098, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2220,7 +2222,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1260336577}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 7e190b70699d5584fab1d0be3d9ab3eb, type: 2}
+  m_Material: {fileID: 6200000, guid: 3e9c3af670a722a4091d9dbb052ab27e, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2485,7 +2487,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 1594859227}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 7e190b70699d5584fab1d0be3d9ab3eb, type: 2}
+  m_Material: {fileID: 6200000, guid: 4e58f552de40ce841b62b6911f842232, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3250,7 +3252,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2030207546}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 7e190b70699d5584fab1d0be3d9ab3eb, type: 2}
+  m_Material: {fileID: 6200000, guid: 4e58f552de40ce841b62b6911f842232, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4453,7 +4455,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 2040811515}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 2dbd6362fc6166c4384e849e3e34c6e6, type: 2}
+  m_Material: {fileID: 6200000, guid: 325773fa92b87f74787325d479eb2098, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
