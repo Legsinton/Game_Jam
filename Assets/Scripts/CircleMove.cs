@@ -8,6 +8,8 @@ public class Vector : MonoBehaviour
     public Vector2 launchDirection;
     public float maxLaunchForce = 10f;
 
+    public GameObject victoryPanel;
+
     public float speed = 2;
 
     public Rigidbody2D rb;
@@ -44,8 +46,9 @@ public class Vector : MonoBehaviour
         rb.position = startPosition;
         lineRenderer.enabled = false;
         lineRenderer.positionCount = 2;
+        victoryPanel.SetActive(false);
 
-        
+
     }
 
     private void Controls()

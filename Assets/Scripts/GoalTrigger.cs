@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class GoalTriggerScript : MonoBehaviour
 {
     public static bool hasReachedGoal = false;
     public float velocityThreshold = 0.1f; // Set a small threshold for detecting "stopped"
     public GameObject victoryPanel;
-    
+    public Text Hits;
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -27,6 +27,9 @@ public class GoalTriggerScript : MonoBehaviour
     }
     private void VictoryPanel()
     {
+        int hitCount = Hit_Counter.Instance.GetHitCount();
+
+        Hits.text = hitCount.ToString() + " Hits";
         Vector3 cameraCenter = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, Camera.main.nearClipPlane));
         RectTransform panelRectTransform = victoryPanel.GetComponent<RectTransform>();
         panelRectTransform.position = new Vector3(cameraCenter.x, cameraCenter.y, panelRectTransform.position.z);
