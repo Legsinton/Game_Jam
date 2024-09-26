@@ -25,4 +25,8 @@ public class Hit_Counter : MonoBehaviour
         AddHits += 1;
         Hits.text = AddHits.ToString() + " Hits";
     }
+    public int GetHitCount() // New method to access hit count
+    {
+        return AddHits;
+    }
 }
