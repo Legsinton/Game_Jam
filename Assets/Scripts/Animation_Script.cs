@@ -34,7 +34,7 @@ public class AnimateScript : MonoBehaviour
 
             // Map the distance to an index within the spriteArray
             // For example, you could divide distance by a factor to control sprite switching sensitivity
-            int spriteIndex = Mathf.Clamp((int)(distance / 2), 0, spriteArray.Length - 1);
+            int spriteIndex = Mathf.Clamp((int)(distance / 2.5f), 0, spriteArray.Length - 1);
 
             // Update the sprite
             spriteRenderer.sprite = spriteArray[spriteIndex];

@@ -6,6 +6,6 @@ public class Control : MonoBehaviour
 {
     public void NextScene()
     {
-        SceneManager.LoadScene("Title_Screen");
+        SceneManager.LoadScene("TestingNewAnim");
     }
 }
