@@ -9,7 +9,7 @@ public class Hit_Counter : MonoBehaviour
 
     public Text Hits;
 
-    int AddHits = 0;
+    int AddHits;
     void Start()
     {
         Hits.text = AddHits.ToString() + " Hits";

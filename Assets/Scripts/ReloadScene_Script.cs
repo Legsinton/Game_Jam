@@ -14,8 +14,5 @@ public class ReloadScene_Script : MonoBehaviour
         SceneManager.LoadScene("Title_Screen");
     }
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
+
 }
