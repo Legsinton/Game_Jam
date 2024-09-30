@@ -1984,10 +1984,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0052083335
-    y: 0.01111111
-    width: 0.9895834
-    height: 0.9777778
+    x: 0.015300918
+    y: -0.019736841
+    width: 0.96905816
+    height: 1.0421052
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 26.991467
@@ -2394,7 +2394,7 @@ MonoBehaviour:
   victoryPanel: {fileID: 1131677261}
   speed: 2
   rb: {fileID: 0}
-  lineRenderer: {fileID: 1726253028}
+  lineRenderer: {fileID: 0}
   lineLengthMultiplier: 0.5
   HitsCount: 0
   Djinn: {fileID: 1071239536}

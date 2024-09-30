@@ -7,11 +7,13 @@ public class ReloadScene_Script : MonoBehaviour
 
     public void ReloadScene()
     {
-        
-        Scene currentScene = SceneManager.GetActiveScene();
+
+        /*Scene currentScene = SceneManager.GetActiveScene();
 
         
-        SceneManager.LoadScene(currentScene.name);
+        SceneManager.LoadScene(currentScene.name);*/
+
+        SceneManager.LoadScene("TestingNewAnim");
     }
 
     

@@ -2068,10 +2068,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0052083335
-    y: 0
-    width: 0.9895834
-    height: 1
+    x: 0.015300918
+    y: -0.019736841
+    width: 0.96905816
+    height: 1.0421052
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 26.991467
@@ -2289,7 +2289,6 @@ GameObject:
   - component: {fileID: 590987541}
   - component: {fileID: 590987540}
   - component: {fileID: 590987544}
-  - component: {fileID: 590987543}
   - component: {fileID: 590987542}
   - component: {fileID: 590987545}
   m_Layer: 0
@@ -2413,26 +2412,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.52684, y: 1.0357113}
   m_EdgeRadius: 0
---- !u!114 &590987543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 590987539}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1a223fe73611784f8f39aceb8e7c498, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CirclePosition: {x: 0, y: 0}
-  velocity: {x: 0, y: 0}
-  speed: 1.2
-  gravity: 9.98
-  MaxSpeed: 20
-  stopSpeed: 1.41
-  groundCheckDistance: 0.05
-  MaxJump: 0
 --- !u!50 &590987544
 Rigidbody2D:
   serializedVersion: 4

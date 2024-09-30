@@ -44,7 +44,7 @@ public class AnimateScript : MonoBehaviour
        
     }
 
-    void SpinBottle()
+    /*void SpinBottle()
     {
         timer += Time.deltaTime;
         if (timer >= spinSpeed)
@@ -53,5 +53,5 @@ public class AnimateScript : MonoBehaviour
             spriteRenderer.sprite = spinSprites[currentFrame]; // Set the current sprite
             timer = 0f; // Reset timer
         }
-    }
+    }*/
 }

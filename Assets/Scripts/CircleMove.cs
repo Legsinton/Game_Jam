@@ -35,8 +35,6 @@ public class Vector : MonoBehaviour
     public GameObject mySprite;
 
 
-
-
     public float diameter = 0.2f;
 
 
@@ -63,14 +61,8 @@ public class Vector : MonoBehaviour
             initialMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             initialMousePos.z = 0f;
 
-
-
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(0, rb.position);
-
-
-
-
 
         }
         if (Input.GetMouseButton(0) && !isLaunched)
@@ -101,20 +93,6 @@ public class Vector : MonoBehaviour
                 Djinn.transform.localScale = new Vector3(1, 1, 1);
             }
 
-            // Get the distance between the object and the mouse position
-
-
-            // Map the distance to an index within the spriteArray
-            // For example, you could divide distance by a factor to control sprite switching sensitivity
-
-
-
-
-            // Set the MouseDistance parameter in the Animator
-            // animator.SetFloat("Movement", distanceAni);
-
-
-
         }
         if (Input.GetMouseButtonUp(0) && lineRenderer.enabled == true && !isLaunched)
         {
@@ -142,16 +120,6 @@ public class Vector : MonoBehaviour
 
     }
 
-    /*void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Floor"))
-        {
-            ResetStartPosition();
-        }
-    }*/
-
-
-
     public void ResetStartPosition()
     {
         rb.position = startPosition;
@@ -165,14 +133,8 @@ public class Vector : MonoBehaviour
         {
             Djinn.SetActive(false);
         }
-        //if (!isLaunched)
-        //{
-        //    Djinn.SetActive(true);
-        //}
+
     }
-
-
-
 
     // Update is called once per frame
     void Update()
@@ -181,15 +143,6 @@ public class Vector : MonoBehaviour
         Controls();
         EnableDjinn();
 
-    }
-
-    void OnMouseDrag()
-    {
-
-        //float distanceAni = Vector3.Distance(playerTransform.position, initialMousePos);
-
-        // Set the MouseDistance parameter in the Animator
-        // animator.SetFloat("Movement", distanceAni);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -208,9 +161,7 @@ public class Vector : MonoBehaviour
             spriteRenderer.sprite = originalSprite;
             isLaunched = false;
             StartCoroutine(Land());
-            Debug.Log("ygyvgvgy");
 
-            // Reset current frame if needed
         }
 
 
@@ -225,7 +176,6 @@ public class Vector : MonoBehaviour
             {
                 if (isLaunched == true)
                 {
-                    Debug.Log("spinsON");
                     spriteRenderer.sprite = spinSprites[i]; // Set the current sprite
                     yield return new WaitForSeconds(0.1f); // Wait a bit before switching to the next sprite
                 }
