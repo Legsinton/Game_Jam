@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Vector : MonoBehaviour
 {
     public Vector2 startPosition = new Vector2(0, 0);
     public Vector2 launchDirection;
     public float maxLaunchForce = 10f;
+    public float speed = 2;
+    public float diameter = 0.2f;
 
     public GameObject victoryPanel;
-
-    public float speed = 2;
 
     public Rigidbody2D rb;
     public LineRenderer lineRenderer;
@@ -22,25 +23,18 @@ public class Vector : MonoBehaviour
     public float launchForce;
     public float SlowDown = 0.8f;
 
-
     private Vector3 initialMousePos;
     private Vector3 finalMousePos;
     private bool isLaunched = false;
-
-    //public Animator animator;
+    // For Animation
     public SpriteRenderer spriteRenderer;
     public Sprite[] spinSprites;
     public Sprite originalSprite;
     public GameObject Awakeprite;
     public GameObject mySprite;
 
-
-    public float diameter = 0.2f;
-
-
     private void Start()
     {
-
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb.gravityScale = 1;
@@ -49,8 +43,6 @@ public class Vector : MonoBehaviour
         lineRenderer.positionCount = 2;
         victoryPanel.SetActive(false);
         originalSprite = spriteRenderer.sprite;
-
-
     }
 
     private void Controls()
@@ -65,6 +57,7 @@ public class Vector : MonoBehaviour
             lineRenderer.SetPosition(0, rb.position);
 
         }
+
         if (Input.GetMouseButton(0) && !isLaunched)
         {
             Vector3 finalMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -94,6 +87,7 @@ public class Vector : MonoBehaviour
             }
 
         }
+
         if (Input.GetMouseButtonUp(0) && lineRenderer.enabled == true && !isLaunched)
         {
             finalMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -112,11 +106,11 @@ public class Vector : MonoBehaviour
             StartCoroutine(SpinBottle());
 
         }
+
         if (isLaunched && rb.velocity.magnitude == 0)
         {
             isLaunched = false;
         }
-
 
     }
 
@@ -136,13 +130,10 @@ public class Vector : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
-
         Controls();
         EnableDjinn();
-
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -150,10 +141,8 @@ public class Vector : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Wall"))
         {
-
             rb.AddForce((-launchDirection * SlowDown) * (-launchForce * SlowDown), ForceMode2D.Impulse);
         }
-
 
         if (collision.gameObject.CompareTag("Floor"))
         {
@@ -161,9 +150,7 @@ public class Vector : MonoBehaviour
             spriteRenderer.sprite = originalSprite;
             isLaunched = false;
             StartCoroutine(Land());
-
         }
-
 
     }
 

@@ -4,20 +4,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class ReloadScene_Script : MonoBehaviour
 {
-
     public void ReloadScene()
     {
 
         /*Scene currentScene = SceneManager.GetActiveScene();
 
-        
         SceneManager.LoadScene(currentScene.name);*/
 
-        SceneManager.LoadScene("TestingNewAnim");
+        SceneManager.LoadScene("Title_Screen");
     }
 
-    
-
-
-
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

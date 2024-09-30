@@ -7,9 +7,6 @@ public class CameraMove : MonoBehaviour
     // Start is called before the first frame update
     public Transform player;
     public Vector3 offset = new Vector3(2, 0, -10);
-    public float smoothTime = 0.25f;
-
-    Vector3 currentVelocity;
 
     private void LateUpdate()
     {
